@@ -1,243 +1,40 @@
 ---
-// Halaman Portal Utama (Landing Switcher untuk 2 Web)
-const portals = [
-  {
-    title: "Amber & Bean Coffee Roasters",
-    category: "Specialty Cafe & Eatery",
-    desc: "Menyajikan artisan single-origin coffee, manual brew, freshly baked pastries, dan ruang estetik untuk nugas dan santai.",
-    url: "/cafe",
-    logo: "/logo-cafe.svg",
-    color: "#D97706",
-    badge: "Cafe & Coffee Shop Web",
-    features: ["Signature Single Origin", "Manual Brew Bar", "Coworking Friendly", "Online Reservation"]
-  },
-  {
-    title: "Naga Steam Dimsum House",
-    category: "Artisan Cantonese Dimsum",
-    desc: "Koleksi dimsum kukus dan goreng autentik, xiao long bao kuah hangat, hakau udang kristal, dan siomay premium halal 100%.",
-    url: "/dimsum",
-    logo: "/logo-dimsum.svg",
-    color: "#E11D48",
-    badge: "Resto Dimsum Web",
-    features: ["Xiao Long Bao Hangat", "Hakau Udang Utuh", "Chili Oil Racikan Spesial", "Pesan Cepat via WhatsApp"]
-  }
-];
+import '../styles/global.css';
 ---
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal Tugas Web — Cafe & Dimsum</title>
-  <link rel="icon" type="image/svg+xml" href="/logo-cafe.svg" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-    body {
-      background: #0F172A;
-      color: #F8FAFC;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 2rem 1.5rem;
-    }
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-      padding-top: 2rem;
-    }
-    .badge-top {
-      display: inline-block;
-      padding: 0.35rem 1rem;
-      border-radius: 9999px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #94A3B8;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-    h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    p.lead {
-      color: #94A3B8;
-      font-size: 1.125rem;
-      max-width: 620px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3.5rem;
-    }
-    .card {
-      background: #1E293B;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 1.5rem;
-      padding: 2.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-    }
-    .card-top {
-      margin-bottom: 1.5rem;
-    }
-    .logo-box {
-      width: 88px;
-      height: 88px;
-      border-radius: 1.25rem;
-      margin-bottom: 1.5rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .logo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .badge-card {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0.25rem 0.75rem;
-      border-radius: 6px;
-      margin-bottom: 0.75rem;
-    }
-    .card h2 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      color: #FFFFFF;
-    }
-    .card .category {
-      color: #94A3B8;
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-    .card p.desc {
-      color: #CBD5E1;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    .features {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-    .features li {
-      color: #94A3B8;
-      font-size: 0.875rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .features li::before {
-      content: "✓";
-      font-weight: 800;
-      color: #38BDF8;
-    }
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.9rem 1.5rem;
-      border-radius: 0.85rem;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      color: #FFFFFF;
-      transition: all 0.2s;
-    }
-    .btn:hover {
-      filter: brightness(1.15);
-      box-shadow: 0 8px 20px -6px rgba(0,0,0,0.4);
-    }
-    footer {
-      text-align: center;
-      color: #64748B;
-      font-size: 0.875rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="badge-top">Project Showcase — Multi-Site Project</div>
-      <h1>Dua Website Dalam Satu Projek</h1>
-      <p class="lead">Projek web terpadu dengan 2 brand terpisah (Cafe & Dimsum). Didesain modular berbasis Astro sehingga siap dikembangkan lebih lanjut dengan ChatGPT.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portal dua website tugas kuliah: Amber & Bean Coffee Roasters dan Naga Steam Dimsum House." />
+    <link rel="icon" type="image/svg+xml" href="/logo-cafe.svg" />
+    <title>Amber & Bean × Naga Steam — Web Project</title>
+  </head>
+  <body class="portal">
+    <header class="portal__top">
+      <strong>Two Houses. One Web Project.</strong>
+      <span>Astro 5 · Responsive · Multi-page</span>
     </header>
-
-    <main class="grid">
-      {portals.map((p) => (
-        <article class="card">
-          <div class="card-top">
-            <div class="logo-box">
-              <img src={p.logo} alt={p.title} />
-            </div>
-            <span class="badge-card" style={`background: ${p.color}22; color: ${p.color}; border: 1px solid ${p.color}44;`}>
-              {p.badge}
-            </span>
-            <h2>{p.title}</h2>
-            <div class="category">{p.category}</div>
-            <p class="desc">{p.desc}</p>
-            <ul class="features">
-              {p.features.map((feat) => (
-                <li>{feat}</li>
-              ))}
-            </ul>
-          </div>
-          <a href={p.url} class="btn" style={`background: ${p.color};`}>
-            Buka Website {p.title.split(" ")[0]} &rarr;
-          </a>
-        </article>
-      ))}
+    <main class="portal-grid">
+      <a class="portal-card" href="/cafe/" aria-label="Masuk ke Amber & Bean Coffee Roasters">
+        <img src="https://unsplash.com/photos/PaKa6QrFytA/download?force=true&w=1600" alt="Interior coffee bar dengan pastry dan perlengkapan kopi" />
+        <div class="portal-card__copy">
+          <small>01 · Coffee House</small>
+          <h1>Amber<br />&amp; Bean</h1>
+          <p>Warm roast, quiet tables, and a slow-morning attitude. Specialty coffee presented with restrained editorial styling.</p>
+          <span class="portal-card__arrow">Enter coffee house →</span>
+        </div>
+      </a>
+      <a class="portal-card" href="/dimsum/" aria-label="Masuk ke Naga Steam Dimsum House">
+        <img src="https://unsplash.com/photos/idUSfFfqLmw/download?force=true&w=1600" alt="Xiao long bao di dalam kukusan bambu" />
+        <div class="portal-card__copy">
+          <small>02 · Dimsum House</small>
+          <h1>Naga<br />Steam</h1>
+          <p>Fresh folds, hot steam, bamboo baskets, and a Cantonese-inspired dining rhythm with crisp modern typography.</p>
+          <span class="portal-card__arrow">Enter dimsum house →</span>
+        </div>
+      </a>
     </main>
-
-    <footer>
-      <p>Dibangun menggunakan <strong>Astro 5</strong> &bull; Disediakan 2 link navigasi: <code>/cafe</code> dan <code>/dimsum</code>.</p>
-    </footer>
-  </div>
-</body>
+    <footer class="portal__foot">Academic project · all food imagery sourced from Unsplash pages referenced in the project notes.</footer>
+  </body>
 </html>

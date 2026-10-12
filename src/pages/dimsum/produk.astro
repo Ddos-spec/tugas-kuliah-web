@@ -1,0 +1,27 @@
+---
+import BrandLayout from '../../layouts/BrandLayout.astro';
+import ProductGrid from '../../components/ProductGrid.astro';
+import { dimsumProducts } from '../../data/brands.js';
+const categories = ['Semua', ...new Set(dimsumProducts.map((item) => item.category))];
+---
+<BrandLayout brand="dimsum" active="product" title="Produk" description="Menu Naga Steam Dimsum House: xiao long bao, har gow, siu mai, fried dimsum, dessert, dan tea.">
+  <section class="product-hero">
+    <div class="shell product-hero__top">
+      <div>
+        <p class="eyebrow">Menu · Steam · Tea</p>
+        <h1 class="display">Folded fresh.<br />Served hot.</h1>
+      </div>
+      <p class="lede">Menu dibuat cukup luas untuk terlihat lengkap, tetapi tetap realistis untuk operasi satu dimsum house. Harga adalah data demo tugas dan bisa diubah dari satu file data.</p>
+    </div>
+    <div class="shell filter-row" aria-label="Kategori menu">
+      {categories.map((category) => <span class="filter-chip">{category}</span>)}
+    </div>
+    <div class="shell"><ProductGrid products={dimsumProducts} /></div>
+  </section>
+  <section class="section section--paper">
+    <div class="shell section-head">
+      <div><p class="eyebrow">Ordering note</p><h2 class="section-title">Build one good basket.</h2></div>
+      <p class="lede">Untuk dua orang: Xiao Long Bao + Har Gow + Siu Mai, lalu satu fried item dan Jasmine Cold Brew Tea. Cukup beragam tanpa bikin meja penuh basket yang cepat dingin.</p>
+    </div>
+  </section>
+</BrandLayout>

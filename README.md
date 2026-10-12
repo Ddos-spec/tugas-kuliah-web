@@ -1,77 +1,42 @@
-# 🍽️ Tugas Web Jokian: Multi-Site Astro Project (Cafe & Dimsum)
+# Tugas Kuliah Web — Amber & Bean + Naga Steam
 
-Projek website gabungan 2 brand dalam 1 repository Astro 5, didesain modular, clean code, dan sangat ramah untuk dilanjutkan pengembangannya via ChatGPT.
+Multi-site Astro 5 berisi dua brand fiktif dalam satu project:
 
----
+- **Amber & Bean Coffee Roasters**
+  - `/cafe/` — Beranda
+  - `/cafe/produk/` — Produk
+  - `/cafe/kontak/` — Kontak
+- **Naga Steam Dimsum House**
+  - `/dimsum/` — Beranda
+  - `/dimsum/produk/` — Produk
+  - `/dimsum/kontak/` — Kontak
+- `/` — Portal dua brand
 
-## 🌐 Struktur Link Website (2-in-1 Project)
+## Menjalankan
 
-| Halaman | URL Path | Deskripsi Brand |
-|---|---|---|
-| **Portal Switcher** | `/` | Beranda portal showcase yang menghubungkan kedua website |
-| **Website Cafe** | `/cafe` | **Amber & Bean Coffee Roasters** (Artisan single-origin cafe, coworking space & pastry) |
-| **Website Dimsum** | `/dimsum` | **Naga Steam Dimsum House** (Restoran dimsum Kanton autentik, xiao long bao & chili oil) |
-
----
-
-## 🎨 Asset Logo (Vector SVG Terpasang)
-
-1. **Logo Cafe**: `public/logo-cafe.svg`
-   - *Brand*: **Amber & Bean Artisan Coffee Roasters**
-   - *Warna*: Warm Amber, Roasted Caramel, Gold (`#D97706`, `#78350F`)
-   - *Elemen*: Cangkir kopi keramik, piring tatakan, uap aromatik & tipografi serif/modern.
-
-2. **Logo Dimsum**: `public/logo-dimsum.svg`
-   - *Brand*: **Naga Steam Authentic Cantonese Dimsum**
-   - *Warna*: Crimson Red, Bamboo Ochre, Rose (`#E11D48`, `#B45309`, `#FFF1F2`)
-   - *Elemen*: Klakat kukusan bambu tradisional, xiao long bao lembut, sumpit & aksen uap panas.
-
----
-
-## 📂 Struktur File Projek
-
-```
-tugas-kuliah-web/
-├── public/
-│   ├── logo-cafe.svg       # Logo resmi Cafe
-│   └── logo-dimsum.svg     # Logo resmi Dimsum
-├── src/
-│   └── pages/
-│       ├── index.astro     # Halaman portal utama (pintu masuk ke 2 web)
-│       ├── cafe/
-│       │   └── index.astro # Full landing page Cafe (Hero, Menu, Fasilitas, Lokasi)
-│       └── dimsum/
-│           └── index.astro # Full landing page Dimsum (Hero, Menu, Jaminan Mutu, Lokasi)
-├── astro.config.mjs
-├── package.json
-└── README.md
+```bash
+npm install
+npm run dev
 ```
 
----
+Build production:
 
-## 🚀 Cara Menjalankan Project
+```bash
+npm run build
+npm run preview
+```
 
-1. **Install Dependencies** (jika belum):
-   ```bash
-   npm install
-   ```
-2. **Jalankan Development Server**:
-   ```bash
-   npm run dev
-   ```
-3. Buka di browser:
-   - Portal Utama: `http://localhost:4321/`
-   - Website Cafe: `http://localhost:4321/cafe`
-   - Website Dimsum: `http://localhost:4321/dimsum`
+## Struktur penting
 
----
+- `public/logo-cafe.svg` dan `public/logo-dimsum.svg` dipakai sebagai logo sekaligus favicon.
+- `src/data/brands.js` menyimpan konfigurasi brand dan seluruh data menu.
+- `src/layouts/BrandLayout.astro` adalah layout shared untuk header/footer/SEO dasar.
+- `src/styles/global.css` berisi visual system responsif untuk kedua brand.
 
-## 🤖 Panduan Melanjutkan Pengembangan dengan ChatGPT
+## Aset gambar
 
-Karena kode ditulis menggunakan standard **Astro 5 + clean semantic HTML/CSS inline**, Bos atau siapa pun bisa langsung copas kode ke ChatGPT dengan prompt seperti:
+Foto ditautkan dari halaman download Unsplash agar project tetap ringan. Foto yang dipilih berasal dari hasil pencarian web untuk coffee shop/barista dan dimsum/bamboo steamer, dan ditandai sebagai free-to-use di bawah Unsplash License pada halaman sumber saat patch dibuat.
 
-> *"ChatGPT, tambahkan form pemesanan meja interaktif dengan validasi nama dan jumlah orang di file `src/pages/cafe/index.astro`."*
+## Catatan demo
 
-atau
-
-> *"ChatGPT, tambahkan filter kategori menu (Kukus, Goreng, Minuman) dengan filter tombol di file `src/pages/dimsum/index.astro`."*
+Alamat, email, dan nomor telepon di halaman Kontak adalah data contoh untuk tugas kuliah. Ganti sebelum digunakan sebagai website bisnis nyata.

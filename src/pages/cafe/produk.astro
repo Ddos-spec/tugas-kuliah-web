@@ -1,0 +1,27 @@
+---
+import BrandLayout from '../../layouts/BrandLayout.astro';
+import ProductGrid from '../../components/ProductGrid.astro';
+import { cafeProducts } from '../../data/brands.js';
+const categories = ['Semua', ...new Set(cafeProducts.map((item) => item.category))];
+---
+<BrandLayout brand="cafe" active="product" title="Produk" description="Menu Amber & Bean Coffee Roasters: specialty coffee, pastry, brunch, dan non-coffee.">
+  <section class="product-hero">
+    <div class="shell product-hero__top">
+      <div>
+        <p class="eyebrow">Menu · Coffee · Pastry</p>
+        <h1 class="display">Drink well.<br />Eat warm.</h1>
+      </div>
+      <p class="lede">Menu dibuat ringkas supaya eksekusi tetap konsisten. Harga pada halaman ini adalah contoh untuk kebutuhan tugas kuliah dan dapat diganti langsung dari satu file data.</p>
+    </div>
+    <div class="shell filter-row" aria-label="Kategori menu">
+      {categories.map((category) => <span class="filter-chip">{category}</span>)}
+    </div>
+    <div class="shell"><ProductGrid products={cafeProducts} /></div>
+  </section>
+  <section class="section section--paper">
+    <div class="shell section-head">
+      <div><p class="eyebrow">Pairing note</p><h2 class="section-title">Not sure what to pick?</h2></div>
+      <p class="lede">Untuk rasa ringan pilih V60 atau Citrus Tonic. Kalau ingin creamy, Spanish Latte paling aman. Untuk brunch, Flat White + Smoked Beef Brioche adalah kombinasi paling seimbang.</p>
+    </div>
+  </section>
+</BrandLayout>

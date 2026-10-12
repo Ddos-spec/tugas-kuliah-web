@@ -1,31 +1,32 @@
 ---
-import BrandLayout from '../../layouts/BrandLayout.astro';
+import CafeLayout from '../../layouts/CafeLayout.astro';
 ---
-<BrandLayout brand="cafe" active="contact" title="Kontak" description="Kontak, jam buka, dan reservasi Amber & Bean Coffee Roasters.">
-  <section class="contact-hero">
-    <div class="shell contact-grid">
-      <div>
-        <p class="eyebrow">Visit · Ask · Reserve</p>
-        <h1 class="display">Come for<br />the coffee.</h1>
-        <p class="lede" style="margin-top:1.7rem">Untuk reservasi meja, kebutuhan kelompok, atau pertanyaan menu, kirim pesan lewat form. Data kontak di bawah adalah data demo tugas dan mudah diganti.</p>
-        <dl class="contact-details">
-          <div class="contact-row"><dt>Area</dt><dd>Tangerang Selatan, Banten</dd></div>
-          <div class="contact-row"><dt>Hours</dt><dd>Sen–Jum 08.00–22.00<br />Sab–Min 07.30–23.00</dd></div>
-          <div class="contact-row"><dt>Email</dt><dd>hello@amberandbean.example</dd></div>
-          <div class="contact-row"><dt>Phone</dt><dd>+62 812 0000 0001</dd></div>
+<CafeLayout active="contact" title="Kontak" description="Kontak, jam buka, dan reservasi Amber & Bean Coffee Roasters.">
+  <section class="c-contact">
+    <div class="c-wrap c-contact-grid">
+      <div class="c-contact-info">
+        <p class="c-kicker">Visit · Ask · Reserve</p>
+        <h1 class="c-display">Come for<br />the coffee.</h1>
+        <p class="c-lede">Untuk reservasi meja, kebutuhan kelompok, atau pertanyaan menu, kirim pesan lewat form. Data kontak di bawah adalah data demo tugas dan mudah diganti.</p>
+        <dl class="c-contact-list">
+          <div class="c-contact-row"><dt>Area</dt><dd>Tangerang Selatan, Banten</dd></div>
+          <div class="c-contact-row"><dt>Hours</dt><dd>Sen–Jum 08.00–22.00<br />Sab–Min 07.30–23.00</dd></div>
+          <div class="c-contact-row"><dt>Email</dt><dd>hello@amberandbean.example</dd></div>
+          <div class="c-contact-row"><dt>Phone</dt><dd>+62 812 0000 0001</dd></div>
         </dl>
       </div>
-      <form class="contact-card" action="mailto:hello@amberandbean.example" method="post" enctype="text/plain">
-        <p class="eyebrow">Send a note</p>
-        <div class="form-grid">
-          <div class="field"><label for="name">Nama</label><input id="name" name="name" autocomplete="name" required /></div>
-          <div class="field"><label for="phone">Nomor HP</label><input id="phone" name="phone" autocomplete="tel" /></div>
-          <div class="field field--full"><label for="subject">Keperluan</label><input id="subject" name="subject" placeholder="Reservasi meja / event / pertanyaan menu" /></div>
-          <div class="field field--full"><label for="message">Pesan</label><textarea id="message" name="message" required></textarea></div>
+      <form class="c-reservation" action="mailto:hello@amberandbean.example" method="post" enctype="text/plain">
+        <p class="c-kicker">Reservation journal</p>
+        <h2>Save a quiet table.</h2>
+        <div class="c-form-grid">
+          <div class="c-field"><label for="name">Nama</label><input id="name" name="name" autocomplete="name" required /></div>
+          <div class="c-field"><label for="phone">Nomor HP</label><input id="phone" name="phone" autocomplete="tel" /></div>
+          <div class="c-field c-field--full"><label for="subject">Keperluan</label><input id="subject" name="subject" placeholder="Reservasi meja / event / pertanyaan menu" /></div>
+          <div class="c-field c-field--full"><label for="message">Pesan</label><textarea id="message" name="message" required></textarea></div>
         </div>
-        <button class="button button--solid" type="submit">Kirim lewat email →</button>
-        <p class="form-note">Form menggunakan <code>mailto:</code> sehingga tidak membutuhkan backend untuk demo tugas.</p>
+        <button class="c-button c-button--dark" type="submit">Kirim lewat email →</button>
+        <p class="c-form-note">Form menggunakan <code>mailto:</code> sehingga tidak membutuhkan backend untuk demo tugas.</p>
       </form>
     </div>
   </section>
-</BrandLayout>
+</CafeLayout>

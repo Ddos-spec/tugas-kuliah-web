@@ -1,65 +1,63 @@
 ---
-import BrandLayout from '../../layouts/BrandLayout.astro';
-import ProductGrid from '../../components/ProductGrid.astro';
+import CafeLayout from '../../layouts/CafeLayout.astro';
 import { cafeProducts } from '../../data/brands.js';
+const featured = cafeProducts.slice(0, 3);
 ---
-<BrandLayout brand="cafe" active="home" title="Beranda" description="Amber & Bean Coffee Roasters — specialty coffee, pastry, dan tempat singgah yang tenang.">
-  <section class="hero">
-    <div class="shell hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Roasted slowly · Served thoughtfully</p>
-        <h1 class="display">Coffee for<br />unhurried days.</h1>
-        <p class="lede">Amber &amp; Bean meracik specialty coffee dengan karakter caramel, cocoa, dan citrus yang bersih—disandingkan dengan pastry hangat dan ruang yang nyaman untuk ngobrol, membaca, atau menyelesaikan deadline.</p>
-        <div class="hero-actions">
-          <a class="button button--solid" href="/cafe/produk/">Lihat menu</a>
-          <a class="button button--ghost" href="/cafe/kontak/">Jam buka &amp; kontak</a>
+<CafeLayout active="home" title="Beranda" description="Amber & Bean Coffee Roasters — specialty coffee, pastry, dan tempat singgah yang tenang.">
+  <section class="c-hero">
+    <div class="c-wrap c-hero-grid">
+      <div class="c-hero-copy">
+        <p class="c-kicker">Roasted slowly · Served thoughtfully</p>
+        <h1 class="c-display">Coffee for<br />unhurried days.</h1>
+        <p class="c-lede">Amber &amp; Bean meracik specialty coffee dengan karakter caramel, cocoa, dan citrus yang bersih—disandingkan dengan pastry hangat dan ruang yang nyaman untuk ngobrol, membaca, atau menyelesaikan deadline.</p>
+        <div class="c-hero-actions">
+          <a class="c-button c-button--dark" href="/cafe/produk/">Lihat menu</a>
+          <a class="c-button c-button--light" href="/cafe/kontak/">Jam buka &amp; kontak</a>
         </div>
       </div>
-      <div class="hero-media">
-        <img src="https://unsplash.com/photos/eN9vH3SSrIA/download?force=true&w=1600" alt="Barista menyiapkan kopi di coffee bar" />
-        <span class="hero-stamp">Daily roast · Small batch · Fresh brew</span>
+      <div class="c-hero-visual">
+        <div class="c-hero-photo"><img src="https://unsplash.com/photos/eN9vH3SSrIA/download?force=true&w=1600" alt="Barista menyiapkan kopi di coffee bar" /></div>
+        <div class="c-hero-note"><strong>Daily roast.</strong><span>Small-batch beans, dialled in every shift.</span></div>
       </div>
     </div>
   </section>
 
-  <section class="section section--paper">
-    <div class="shell section-head">
-      <div>
-        <p class="eyebrow">The room</p>
-        <h2 class="section-title">Warm light.<br />Good coffee.<br />No rush.</h2>
-      </div>
-      <p class="lede">Bukan sekadar tempat “aesthetic”. Fokusnya tetap secangkir kopi yang konsisten, meja yang benar-benar nyaman dipakai, dan ambience yang tidak mengganggu percakapan.</p>
+  <section class="c-section c-section--paper">
+    <div class="c-wrap c-section-head">
+      <div><p class="c-kicker">The room</p><h2 class="c-title">Warm light.<br />Good coffee.<br />No rush.</h2></div>
+      <p class="c-lede">Bukan sekadar tempat “aesthetic”. Fokusnya tetap secangkir kopi yang konsisten, meja yang benar-benar nyaman dipakai, dan ambience yang tidak mengganggu percakapan.</p>
     </div>
-    <div class="shell image-pair">
+    <div class="c-wrap c-room-grid">
       <figure><img src="https://unsplash.com/photos/GX6_yPidVoQ/download?force=true&w=1600" alt="Coffee shop hangat dengan pastry dan barista" /></figure>
       <figure><img src="https://unsplash.com/photos/_yJXuiFdsPo/download?force=true&w=1200" alt="Interior coffee shop yang nyaman" /></figure>
     </div>
   </section>
 
-  <section class="section">
-    <div class="shell story-grid">
-      <div>
-        <p class="eyebrow">How we work</p>
-        <h2 class="section-title">Small details make the cup.</h2>
-        <p class="lede" style="margin-top:1.5rem">Dari profiling roast sampai temperatur air, kami menjaga hal-hal kecil yang bikin rasa tetap stabil dari pagi sampai malam.</p>
+  <section class="c-section">
+    <div class="c-wrap c-principles">
+      <div><p class="c-kicker">How we work</p><h2 class="c-title">Small details make the cup.</h2><p class="c-lede" style="margin-top:1.5rem">Dari profiling roast sampai temperatur air, kami menjaga hal-hal kecil yang bikin rasa tetap stabil dari pagi sampai malam.</p></div>
+      <div class="c-principle-list">
+        <article class="c-principle"><span>01</span><div><h3>Roast in small batches.</h3><p>Profil medium-light supaya origin character tetap terbaca.</p></div></article>
+        <article class="c-principle"><span>02</span><div><h3>Dial in every shift.</h3><p>Grinder, dose, dan extraction dicek ulang saat kondisi ruang berubah.</p></div></article>
+        <article class="c-principle"><span>03</span><div><h3>Serve without theatre.</h3><p>Teknik penting, tapi pengalaman minum tetap harus terasa sederhana.</p></div></article>
       </div>
-      <ol class="story-list">
-        <li><strong>01</strong><span><b>Roast in small batches.</b> Profil medium-light supaya origin character tetap terbaca.</span></li>
-        <li><strong>02</strong><span><b>Dial in every shift.</b> Grinder, dose, dan extraction dicek ulang saat kondisi ruang berubah.</span></li>
-        <li><strong>03</strong><span><b>Serve without theatre.</b> Teknik penting, tapi pengalaman minum tetap harus terasa sederhana.</span></li>
-      </ol>
     </div>
   </section>
 
-  <section class="section section--paper">
-    <div class="shell section-head">
-      <div>
-        <p class="eyebrow">Popular right now</p>
-        <h2 class="section-title">Start with these.</h2>
-      </div>
-      <p class="lede">Tiga pilihan yang paling mudah jadi pintu masuk—dari cold brew yang clean sampai pastry yang paling aman buat pairing.</p>
+  <section class="c-section c-section--paper">
+    <div class="c-wrap c-section-head">
+      <div><p class="c-kicker">Popular right now</p><h2 class="c-title">Start with these.</h2></div>
+      <p class="c-lede">Tiga pilihan yang paling mudah jadi pintu masuk—dari cold brew yang clean sampai pastry yang paling aman buat pairing.</p>
     </div>
-    <div class="shell"><ProductGrid products={cafeProducts} limit={3} /></div>
-    <div class="shell" style="margin-top:1.5rem"><a class="button button--ghost" href="/cafe/produk/">Buka seluruh menu →</a></div>
+    <div class="c-wrap c-feature-row">
+      {featured.map((item) => (
+        <article class="c-feature">
+          <small>{item.category} · {item.price}</small>
+          <h3>{item.name}</h3>
+          <p>{item.note}</p>
+        </article>
+      ))}
+    </div>
+    <div class="c-wrap" style="margin-top:1.5rem"><a class="c-button c-button--light" href="/cafe/produk/">Buka seluruh menu →</a></div>
   </section>
-</BrandLayout>
+</CafeLayout>

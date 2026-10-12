@@ -1,59 +1,68 @@
 ---
-import BrandLayout from '../../layouts/BrandLayout.astro';
-import ProductGrid from '../../components/ProductGrid.astro';
+import DimsumLayout from '../../layouts/DimsumLayout.astro';
 import { dimsumProducts } from '../../data/brands.js';
+const featured = dimsumProducts.slice(0, 3);
 ---
-<BrandLayout brand="dimsum" active="home" title="Beranda" description="Naga Steam Dimsum House — Cantonese-inspired dimsum, bamboo steamers, dan sajian panas yang dibuat fresh.">
-  <section class="hero">
-    <div class="shell hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Folded by hand · Steamed to order</p>
-        <h1 class="display">Hot steam.<br />Soft folds.</h1>
-        <p class="lede">Naga Steam menyajikan dimsum bergaya Kanton dengan fokus pada tekstur: kulit tipis, filling juicy, broth panas, dan kukusan bambu yang baru dibuka saat sampai ke meja.</p>
-        <div class="hero-actions">
-          <a class="button button--solid" href="/dimsum/produk/">Lihat menu</a>
-          <a class="button button--ghost" href="/dimsum/kontak/">Reservasi meja</a>
-        </div>
+<DimsumLayout active="home" title="Beranda" description="Naga Steam Dimsum House — Cantonese-inspired dimsum, bamboo steamers, dan sajian panas yang dibuat fresh.">
+  <section class="d-hero">
+    <div class="d-hero-grid">
+      <div class="d-hero-copy">
+        <p class="d-label">Folded by hand / steamed to order</p>
+        <h1 class="d-display">HOT<br />STEAM.<br />SOFT<br />FOLDS.</h1>
+        <p class="d-copy">Naga Steam menyajikan dimsum bergaya Kanton dengan fokus pada tekstur: kulit tipis, filling juicy, broth panas, dan kukusan bambu yang baru dibuka saat sampai ke meja.</p>
+        <div class="d-hero-actions"><a class="d-button d-button--dark" href="/dimsum/produk/">OPEN MENU</a><a class="d-button" href="/dimsum/kontak/">BOOK A TABLE</a></div>
       </div>
-      <div class="hero-media">
+      <div class="d-hero-media">
         <img src="https://unsplash.com/photos/j9fy7p_hcpM/download?force=true&w=1600" alt="Xiao long bao hangat di dalam kukusan bambu" />
-        <span class="hero-stamp">Steam to order · Bamboo basket · Served hot</span>
+        <div class="d-hero-sticker">Steam<br />to order<br />every basket</div>
       </div>
     </div>
   </section>
 
-  <section class="section section--paper">
-    <div class="shell section-head">
-      <div><p class="eyebrow">Straight from the steamer</p><h2 class="section-title">Fresh folds,<br />not display food.</h2></div>
-      <p class="lede">Kualitas dimsum turun cepat setelah keluar dari kukusan. Karena itu alurnya sederhana: batch kecil, steam to order, lalu langsung ke meja.</p>
+  <section class="d-strip" aria-label="Naga Steam highlights">
+    <div><strong>01 / Fresh Fold</strong><span>Small batches every service</span></div>
+    <div><strong>02 / Hot Basket</strong><span>Steam only after order</span></div>
+    <div><strong>03 / Thin Skin</strong><span>Texture before garnish</span></div>
+    <div><strong>04 / Tea Ready</strong><span>Jasmine & HK milk tea</span></div>
+  </section>
+
+  <section class="d-section">
+    <div class="d-wrap d-section-head">
+      <div><p class="d-label">Straight from the steamer</p><h2 class="d-title">Fresh folds,<br />not display food.</h2></div>
+      <p class="d-copy">Kualitas dimsum turun cepat setelah keluar dari kukusan. Karena itu alurnya sederhana: batch kecil, steam to order, lalu langsung ke meja.</p>
     </div>
-    <div class="shell image-pair">
+    <div class="d-wrap d-photo-wall">
       <figure><img src="https://unsplash.com/photos/idUSfFfqLmw/download?force=true&w=1600" alt="Steamed dumplings di dalam bamboo steamer" /></figure>
       <figure><img src="https://unsplash.com/photos/IhR3WOLuM7M/download?force=true&w=1200" alt="Beragam dimsum dan side dish" /></figure>
     </div>
   </section>
 
-  <section class="section">
-    <div class="shell story-grid">
-      <div>
-        <p class="eyebrow">The Naga standard</p>
-        <h2 class="section-title">Texture first.<br />Then flavour.</h2>
-        <p class="lede" style="margin-top:1.5rem">Dimsum yang bagus bukan cuma soal isian. Kulit, kelembapan, suhu, dan timing steam harus bertemu di satu titik.</p>
-      </div>
-      <ol class="story-list">
-        <li><strong>01</strong><span><b>Folded in small batches.</b> Wrapper tidak dibiarkan mengering sebelum masuk steamer.</span></li>
-        <li><strong>02</strong><span><b>Steam to order.</b> Setiap basket punya timing sendiri supaya kulit tidak overcooked.</span></li>
-        <li><strong>03</strong><span><b>Serve immediately.</b> Basket dibuka di meja agar aroma dan teksturnya masih tepat.</span></li>
-      </ol>
+  <section class="d-section d-section--dark">
+    <div class="d-wrap d-section-head">
+      <div><p class="d-label">The Naga standard</p><h2 class="d-title">Texture first.<br />Then flavour.</h2></div>
+      <p class="d-copy" style="color:rgba(255,255,255,.68)">Dimsum yang bagus bukan cuma soal isian. Kulit, kelembapan, suhu, dan timing steam harus bertemu di satu titik.</p>
+    </div>
+    <div class="d-wrap d-system">
+      <article><span>01</span><h3>Fold small.</h3><p>Wrapper tidak dibiarkan mengering sebelum masuk steamer.</p></article>
+      <article><span>02</span><h3>Steam exact.</h3><p>Setiap basket punya timing sendiri supaya kulit tidak overcooked.</p></article>
+      <article><span>03</span><h3>Serve now.</h3><p>Basket dibuka di meja agar aroma dan teksturnya masih tepat.</p></article>
     </div>
   </section>
 
-  <section class="section section--paper">
-    <div class="shell section-head">
-      <div><p class="eyebrow">House favourites</p><h2 class="section-title">Order these first.</h2></div>
-      <p class="lede">Kalau baru pertama datang, mulai dari tiga item ini untuk dapat gambaran karakter Naga Steam: broth, prawn texture, dan umami.</p>
+  <section class="d-section">
+    <div class="d-wrap d-section-head">
+      <div><p class="d-label">House favourites</p><h2 class="d-title">Order these first.</h2></div>
+      <p class="d-copy">Tiga item ini memberi gambaran karakter Naga Steam: broth, prawn texture, dan umami.</p>
     </div>
-    <div class="shell"><ProductGrid products={dimsumProducts} limit={3} /></div>
-    <div class="shell" style="margin-top:1.5rem"><a class="button button--ghost" href="/dimsum/produk/">Buka seluruh menu →</a></div>
+    <div class="d-wrap d-favourites">
+      {featured.map((item) => (
+        <article class="d-favourite">
+          <div class="d-favourite-top"><span>{item.category}</span><span>{item.price}</span></div>
+          <h3>{item.name}</h3>
+          <p>{item.note}</p>
+        </article>
+      ))}
+    </div>
+    <div class="d-wrap" style="margin-top:1.5rem"><a class="d-button" href="/dimsum/produk/">SEE FULL MENU →</a></div>
   </section>
-</BrandLayout>
+</DimsumLayout>

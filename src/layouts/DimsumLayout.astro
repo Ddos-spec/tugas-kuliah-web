@@ -1,0 +1,42 @@
+---
+import '../styles/dimsum.css';
+import { brands } from '../data/brands.js';
+
+const { active = 'home', title = '', description = '' } = Astro.props;
+const site = brands.dimsum;
+const pageTitle = title ? `${title} — ${site.fullName}` : site.fullName;
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description || `${site.fullName} — Cantonese-inspired dimsum.`} />
+    <meta name="theme-color" content="#121212" />
+    <link rel="icon" type="image/svg+xml" href={site.logo} />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="d-site">
+    <header class="d-header">
+      <a class="d-logo" href={site.home} aria-label="Naga Steam beranda">
+        <img src={site.logo} alt="Logo Naga Steam Dimsum House" />
+      </a>
+      <div class="d-wordmark"><strong>NAGA STEAM</strong><span>DIMSUM HOUSE · TANGSEL</span></div>
+      <nav class="d-nav" aria-label="Navigasi Naga Steam">
+        <a href={site.home} aria-current={active === 'home' ? 'page' : undefined}>01 / Home</a>
+        <a href={site.product} aria-current={active === 'product' ? 'page' : undefined}>02 / Menu</a>
+        <a href={site.contact} aria-current={active === 'contact' ? 'page' : undefined}>03 / Contact</a>
+      </nav>
+      <a class="d-order" href={site.contact}>BOOK TABLE ↗</a>
+    </header>
+    <main><slot /></main>
+    <footer class="d-footer">
+      <div class="d-footer-word">NAGA<br />STEAM</div>
+      <div class="d-footer-line">
+        <span>Steam to order · Serve immediately</span>
+        <nav aria-label="Navigasi footer dimsum"><a href={site.home}>Home</a><a href={site.product}>Menu</a><a href={site.contact}>Contact</a><a href="/">Portal</a></nav>
+        <span>Disusun oleh: ANDIKA RAIHANSYAH (251010502968) &amp; Muhammad Rifki Rhamadani (251010503858) · © 2026</span>
+      </div>
+    </footer>
+  </body>
+</html>

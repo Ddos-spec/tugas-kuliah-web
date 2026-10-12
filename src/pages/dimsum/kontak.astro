@@ -1,32 +1,32 @@
 ---
-import BrandLayout from '../../layouts/BrandLayout.astro';
+import DimsumLayout from '../../layouts/DimsumLayout.astro';
 ---
-<BrandLayout brand="dimsum" active="contact" title="Kontak" description="Kontak, jam buka, dan reservasi Naga Steam Dimsum House.">
-  <section class="contact-hero">
-    <div class="shell contact-grid">
-      <div>
-        <p class="eyebrow">Book · Ask · Gather</p>
-        <h1 class="display">Bring the<br />whole table.</h1>
-        <p class="lede" style="margin-top:1.7rem">Reservasi disarankan untuk grup supaya basket bisa masuk meja bertahap dan tetap panas. Kontak di bawah adalah data demo untuk kebutuhan tugas.</p>
-        <dl class="contact-details">
-          <div class="contact-row"><dt>Area</dt><dd>Tangerang Selatan, Banten</dd></div>
-          <div class="contact-row"><dt>Hours</dt><dd>Sen–Jum 10.00–22.00<br />Sab–Min 09.00–23.00</dd></div>
-          <div class="contact-row"><dt>Email</dt><dd>hello@nagasteam.example</dd></div>
-          <div class="contact-row"><dt>Phone</dt><dd>+62 812 0000 0002</dd></div>
-        </dl>
-      </div>
-      <form class="contact-card" action="mailto:hello@nagasteam.example" method="post" enctype="text/plain">
-        <p class="eyebrow">Reserve a table</p>
-        <div class="form-grid">
-          <div class="field"><label for="name">Nama</label><input id="name" name="name" autocomplete="name" required /></div>
-          <div class="field"><label for="phone">Nomor HP</label><input id="phone" name="phone" autocomplete="tel" required /></div>
-          <div class="field"><label for="date">Tanggal</label><input id="date" name="date" type="date" /></div>
-          <div class="field"><label for="people">Jumlah orang</label><input id="people" name="people" type="number" min="1" max="30" /></div>
-          <div class="field field--full"><label for="message">Catatan</label><textarea id="message" name="message" placeholder="High chair, alergi, kebutuhan meja, dll."></textarea></div>
+<DimsumLayout active="contact" title="Kontak" description="Kontak, jam buka, dan reservasi Naga Steam Dimsum House.">
+  <section class="d-contact">
+    <div class="d-contact-panel">
+      <p class="d-label">Book / Ask / Gather</p>
+      <h1 class="d-display">BRING<br />THE<br />WHOLE<br />TABLE.</h1>
+      <p class="d-copy">Reservasi disarankan untuk grup supaya basket bisa masuk meja bertahap dan tetap panas. Kontak di bawah adalah data demo untuk kebutuhan tugas.</p>
+      <dl class="d-contact-data">
+        <div class="d-contact-row"><dt>Area</dt><dd>Tangerang Selatan, Banten</dd></div>
+        <div class="d-contact-row"><dt>Hours</dt><dd>Sen–Jum 10.00–22.00<br />Sab–Min 09.00–23.00</dd></div>
+        <div class="d-contact-row"><dt>Email</dt><dd>hello@nagasteam.example</dd></div>
+        <div class="d-contact-row"><dt>Phone</dt><dd>+62 812 0000 0002</dd></div>
+      </dl>
+    </div>
+    <div class="d-booking">
+      <div class="d-booking-head"><h1>Reserve<br />a basket.</h1><span>FORM / 03</span></div>
+      <form action="mailto:hello@nagasteam.example" method="post" enctype="text/plain">
+        <div class="d-form">
+          <div class="d-field"><label for="name">Nama</label><input id="name" name="name" autocomplete="name" required /></div>
+          <div class="d-field"><label for="phone">Nomor HP</label><input id="phone" name="phone" autocomplete="tel" required /></div>
+          <div class="d-field"><label for="date">Tanggal</label><input id="date" name="date" type="date" /></div>
+          <div class="d-field"><label for="people">Jumlah orang</label><input id="people" name="people" type="number" min="1" max="30" /></div>
+          <div class="d-field d-field--full"><label for="message">Catatan</label><textarea id="message" name="message" placeholder="High chair, alergi, kebutuhan meja, dll."></textarea></div>
         </div>
-        <button class="button button--solid" type="submit">Kirim reservasi →</button>
-        <p class="form-note">Demo statis memakai <code>mailto:</code>; tidak perlu backend dan tetap aman untuk dipresentasikan.</p>
+        <button class="d-button d-button--red" type="submit">SEND RESERVATION →</button>
+        <p class="d-form-note">Demo statis memakai <code>mailto:</code>; tidak perlu backend dan tetap aman untuk dipresentasikan.</p>
       </form>
     </div>
   </section>
-</BrandLayout>
+</DimsumLayout>

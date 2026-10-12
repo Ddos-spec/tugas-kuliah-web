@@ -1,27 +1,40 @@
 ---
-import BrandLayout from '../../layouts/BrandLayout.astro';
-import ProductGrid from '../../components/ProductGrid.astro';
+import CafeLayout from '../../layouts/CafeLayout.astro';
 import { cafeProducts } from '../../data/brands.js';
-const categories = ['Semua', ...new Set(cafeProducts.map((item) => item.category))];
+const categories = [...new Set(cafeProducts.map((item) => item.category))];
 ---
-<BrandLayout brand="cafe" active="product" title="Produk" description="Menu Amber & Bean Coffee Roasters: specialty coffee, pastry, brunch, dan non-coffee.">
-  <section class="product-hero">
-    <div class="shell product-hero__top">
-      <div>
-        <p class="eyebrow">Menu · Coffee · Pastry</p>
-        <h1 class="display">Drink well.<br />Eat warm.</h1>
-      </div>
-      <p class="lede">Menu dibuat ringkas supaya eksekusi tetap konsisten. Harga pada halaman ini adalah contoh untuk kebutuhan tugas kuliah dan dapat diganti langsung dari satu file data.</p>
-    </div>
-    <div class="shell filter-row" aria-label="Kategori menu">
-      {categories.map((category) => <span class="filter-chip">{category}</span>)}
-    </div>
-    <div class="shell"><ProductGrid products={cafeProducts} /></div>
-  </section>
-  <section class="section section--paper">
-    <div class="shell section-head">
-      <div><p class="eyebrow">Pairing note</p><h2 class="section-title">Not sure what to pick?</h2></div>
-      <p class="lede">Untuk rasa ringan pilih V60 atau Citrus Tonic. Kalau ingin creamy, Spanish Latte paling aman. Untuk brunch, Flat White + Smoked Beef Brioche adalah kombinasi paling seimbang.</p>
+<CafeLayout active="product" title="Produk" description="Menu Amber & Bean Coffee Roasters: specialty coffee, pastry, brunch, dan non-coffee.">
+  <section class="c-menu-hero">
+    <div class="c-wrap c-menu-intro">
+      <div><p class="c-kicker">Coffee · Pastry · Brunch</p><h1 class="c-display">Drink well.<br />Eat warm.</h1></div>
+      <p class="c-lede">Menu dibuat ringkas supaya eksekusi tetap konsisten. Harga pada halaman ini adalah contoh untuk kebutuhan tugas kuliah dan dapat diganti langsung dari satu file data.</p>
     </div>
   </section>
-</BrandLayout>
+
+  <section class="c-wrap c-menu-layout">
+    <div class="c-menu-list">
+      {categories.map((category) => (
+        <section class="c-menu-category">
+          <h2>{category}</h2>
+          <div class="c-menu-items">
+            {cafeProducts.filter((item) => item.category === category).map((item) => (
+              <article class="c-menu-item">
+                <div>
+                  <h3>{item.name}</h3>
+                  <p>{item.note}</p>
+                  {item.badge && <span class="c-menu-badge">{item.badge}</span>}
+                </div>
+                <span class="c-menu-price">{item.price}</span>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+    <aside class="c-menu-aside">
+      <img src="https://unsplash.com/photos/PaKa6QrFytA/download?force=true&w=900" alt="Kopi dan pastry Amber & Bean" />
+      <h2>Pairing note.</h2>
+      <p>Untuk rasa ringan pilih V60 atau Citrus Tonic. Kalau ingin creamy, Spanish Latte paling aman. Untuk brunch, Flat White + Smoked Beef Brioche adalah kombinasi paling seimbang.</p>
+    </aside>
+  </section>
+</CafeLayout>

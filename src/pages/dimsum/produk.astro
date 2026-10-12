@@ -1,28 +1,55 @@
 ---
 import DimsumLayout from '../../layouts/DimsumLayout.astro';
 import { dimsumProducts } from '../../data/brands.js';
-const categories = ['Semua', ...new Set(dimsumProducts.map((item) => item.category))];
+const categories = ['Semua Kategori', ...new Set(dimsumProducts.map((item) => item.category))];
 ---
-<DimsumLayout active="product" title="Produk" description="Menu Naga Steam Dimsum House: xiao long bao, har gow, siu mai, fried dimsum, dessert, dan tea.">
+<DimsumLayout active="product" title="Daftar Menu" description="Daftar lengkap menu hidangan Naga Steam Dimsum: Dimsum Kukus, Goreng, Hidangan Penutup, dan Minuman Teh.">
+  <!-- Menu Header -->
   <section class="d-menu-hero">
-    <div class="d-wrap d-menu-top">
-      <div><p class="d-label">Menu / Steam / Tea</p><h1 class="d-display">FOLDED<br />FRESH.</h1></div>
-      <p class="d-copy">Menu dibuat cukup luas untuk terlihat lengkap, tetapi tetap realistis untuk operasi satu dimsum house. Harga adalah data demo tugas dan bisa diubah dari satu file data.</p>
+    <div class="d-wrap">
+      <h1>Daftar Menu Dimsum</h1>
+      <p>Pilihan hidangan dimsum halal, renyah, dan lezat dengan harga terjangkau. Disajikan segar setiap hari.</p>
+      <div class="d-category-row" aria-label="Kategori menu">
+        {categories.map((category) => (
+          <span class="d-category-badge">{category}</span>
+        ))}
+      </div>
     </div>
-    <div class="d-wrap d-category-row" aria-label="Kategori menu">{categories.map((category) => <span>{category}</span>)}</div>
   </section>
 
-  <section class="d-menu-zone">
-    <div class="d-wrap d-menu-grid">
-      {dimsumProducts.map((item, index) => (
-        <article class="d-menu-card">
-          <div class="d-menu-num"><span>{String(index + 1).padStart(2, '0')} / {item.category}</span><span>{item.price}</span></div>
-          <h2>{item.name}</h2>
-          <p>{item.note}</p>
-          {item.badge && <em>{item.badge}</em>}
-        </article>
-      ))}
+  <!-- Grid Menu Makanan -->
+  <section class="d-section">
+    <div class="d-wrap">
+      <div class="d-menu-grid">
+        {dimsumProducts.map((item) => (
+          <article class="d-menu-card">
+            <div>
+              <div class="d-card-top">
+                <span class="d-badge">{item.category}</span>
+                <span class="d-price">{item.price}</span>
+              </div>
+              <h2>{item.name}</h2>
+              <p>{item.note}</p>
+            </div>
+            {item.badge && (
+              <div style="margin-top: 1rem;">
+                <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; background: #FED7D7; color: #9B2C2C; padding: 0.2rem 0.6rem; border-radius: 4px;">
+                  ★ {item.badge}
+                </span>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+
+      <!-- Info Pemesanan -->
+      <div style="margin-top: 3rem; background: #FFF5F5; border: 2px dashed #FEB2B2; border-radius: 12px; padding: 2rem; text-align: center;">
+        <h3 style="font-size: 1.35rem; color: #9B2C2C; margin-bottom: 0.5rem;">Tips Rekomendasi Porsi</h3>
+        <p style="color: #4A5568; max-width: 650px; margin: 0 auto 1.5rem;">
+          Untuk 2 orang, kami sarankan memesan 3 basket kukus (Xiao Long Bao + Hakau + Siomay), 1 porsi goreng, dan 2 cangkir teh melati hangat agar porsi pas dan tetap hangat saat disantap.
+        </p>
+        <a class="d-button d-button--dark" href="/dimsum/kontak/">Pesan Tempat Sekarang</a>
+      </div>
     </div>
-    <div class="d-wrap d-order-note"><h2>Build one good basket.</h2><p>Untuk dua orang: Xiao Long Bao + Har Gow + Siu Mai, lalu satu fried item dan Jasmine Cold Brew Tea. Cukup beragam tanpa bikin meja penuh basket yang cepat dingin.</p></div>
   </section>
 </DimsumLayout>

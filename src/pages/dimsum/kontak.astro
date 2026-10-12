@@ -1,32 +1,71 @@
 ---
 import DimsumLayout from '../../layouts/DimsumLayout.astro';
 ---
-<DimsumLayout active="contact" title="Kontak" description="Kontak, jam buka, dan reservasi Naga Steam Dimsum House.">
-  <section class="d-contact">
-    <div class="d-contact-panel">
-      <p class="d-label">Book / Ask / Gather</p>
-      <h1 class="d-display">BRING<br />THE<br />WHOLE<br />TABLE.</h1>
-      <p class="d-copy">Reservasi disarankan untuk grup supaya basket bisa masuk meja bertahap dan tetap panas. Kontak di bawah adalah data demo untuk kebutuhan tugas.</p>
-      <dl class="d-contact-data">
-        <div class="d-contact-row"><dt>Area</dt><dd>Tangerang Selatan, Banten</dd></div>
-        <div class="d-contact-row"><dt>Hours</dt><dd>Sen–Jum 10.00–22.00<br />Sab–Min 09.00–23.00</dd></div>
-        <div class="d-contact-row"><dt>Email</dt><dd>hello@nagasteam.example</dd></div>
-        <div class="d-contact-row"><dt>Phone</dt><dd>+62 812 0000 0002</dd></div>
-      </dl>
-    </div>
-    <div class="d-booking">
-      <div class="d-booking-head"><h1>Reserve<br />a basket.</h1><span>FORM / 03</span></div>
-      <form action="mailto:hello@nagasteam.example" method="post" enctype="text/plain">
-        <div class="d-form">
-          <div class="d-field"><label for="name">Nama</label><input id="name" name="name" autocomplete="name" required /></div>
-          <div class="d-field"><label for="phone">Nomor HP</label><input id="phone" name="phone" autocomplete="tel" required /></div>
-          <div class="d-field"><label for="date">Tanggal</label><input id="date" name="date" type="date" /></div>
-          <div class="d-field"><label for="people">Jumlah orang</label><input id="people" name="people" type="number" min="1" max="30" /></div>
-          <div class="d-field d-field--full"><label for="message">Catatan</label><textarea id="message" name="message" placeholder="High chair, alergi, kebutuhan meja, dll."></textarea></div>
+<DimsumLayout active="contact" title="Kontak & Reservasi" description="Informasi lokasi, jam operasional, dan form reservasi meja Naga Steam Dimsum House.">
+  <div class="d-wrap">
+    <section class="d-contact-grid">
+      <!-- Kolom Informasi Outlet -->
+      <div class="d-contact-info">
+        <h2>Informasi Restoran</h2>
+        <p style="color: #718096; margin-bottom: 1.5rem;">
+          Silakan hubungi kami untuk informasi ketersediaan meja, reservasi acara keluarga, atau pemesanan katering.
+        </p>
+
+        <ul class="d-contact-list">
+          <li><strong>Lokasi:</strong> Ruko Garden Boulevard Blok C No. 8, Tangerang Selatan</li>
+          <li><strong>Jam Buka:</strong> Senin – Jumat: 10.00 – 22.00 WIB<br />Sabtu – Minggu: 09.00 – 23.00 WIB</li>
+          <li><strong>WhatsApp:</strong> +62 812-3456-7890</li>
+          <li><strong>Email:</strong> info@nagasteam.example</li>
+          <li><strong>Status:</strong> 100% Bersertifikasi Halal</li>
+        </ul>
+
+        <div style="margin-top: 2rem; padding: 1.25rem; background: #FFF5F5; border-radius: 8px; border: 1px solid #FED7D7;">
+          <h4 style="color: #9B2C2C; margin-bottom: 0.35rem; font-size: 0.95rem;">Catatan Tugas Kuliah:</h4>
+          <p style="font-size: 0.85rem; color: #718096;">
+            Formulir di samping menggunakan aksi demo HTML murni (mailto:), sehingga siap dipresentasikan tanpa konfigurasi database server tambahan.
+          </p>
         </div>
-        <button class="d-button d-button--red" type="submit">SEND RESERVATION →</button>
-        <p class="d-form-note">Demo statis memakai <code>mailto:</code>; tidak perlu backend dan tetap aman untuk dipresentasikan.</p>
-      </form>
-    </div>
-  </section>
+      </div>
+
+      <!-- Kolom Form Reservasi Meja -->
+      <div class="d-form-card">
+        <h2>Formulir Reservasi Meja</h2>
+        <p style="color: #718096; margin-bottom: 1.5rem; font-size: 0.92rem;">
+          Isi formulir di bawah ini untuk memesan meja terlebih dahulu:
+        </p>
+
+        <form action="mailto:info@nagasteam.example" method="post" enctype="text/plain">
+          <div class="d-form-group">
+            <label for="name">Nama Lengkap Pemesan *</label>
+            <input id="name" name="name" type="text" placeholder="Contoh: Budi Santoso" required />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="d-form-group">
+              <label for="phone">Nomor Telepon / WhatsApp *</label>
+              <input id="phone" name="phone" type="tel" placeholder="0812xxxxxxx" required />
+            </div>
+            <div class="d-form-group">
+              <label for="people">Jumlah Orang *</label>
+              <input id="people" name="people" type="number" min="1" max="25" placeholder="Contoh: 4" required />
+            </div>
+          </div>
+
+          <div class="d-form-group">
+            <label for="date">Rencana Tanggal &amp; Waktu Datang</label>
+            <input id="date" name="date" type="date" />
+          </div>
+
+          <div class="d-form-group">
+            <label for="message">Catatan Khusus (Opsional)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Contoh: Meja dekat jendela, butuh baby chair, dll."></textarea>
+          </div>
+
+          <button class="d-button d-button--dark" type="submit" style="width: 100%; border: 0; cursor: pointer;">
+            Kirim Permintaan Reservasi
+          </button>
+        </form>
+      </div>
+    </section>
+  </div>
 </DimsumLayout>

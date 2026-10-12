@@ -11,31 +11,56 @@ const pageTitle = title ? `${title} — ${site.fullName}` : site.fullName;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description || `${site.fullName} — Cantonese-inspired dimsum.`} />
-    <meta name="theme-color" content="#121212" />
+    <meta name="description" content={description || `${site.fullName} — Restoran Dimsum Autentik Halal.`} />
+    <meta name="theme-color" content="#C53030" />
     <link rel="icon" type="image/svg+xml" href={site.logo} />
     <title>{pageTitle}</title>
   </head>
   <body class="d-site">
     <header class="d-header">
-      <a class="d-logo" href={site.home} aria-label="Naga Steam beranda">
-        <img src={site.logo} alt="Logo Naga Steam Dimsum House" />
-      </a>
-      <div class="d-wordmark"><strong>NAGA STEAM</strong><span>DIMSUM HOUSE · TANGSEL</span></div>
+      <div class="d-header-left">
+        <a class="d-logo" href={site.home} aria-label="Naga Steam beranda">
+          <img src={site.logo} alt="Logo Naga Steam Dimsum House" />
+        </a>
+        <div class="d-wordmark">
+          <strong>NAGA STEAM</strong>
+          <span>DIMSUM HOUSE RESTO</span>
+        </div>
+      </div>
       <nav class="d-nav" aria-label="Navigasi Naga Steam">
-        <a href={site.home} aria-current={active === 'home' ? 'page' : undefined}>01 / Home</a>
-        <a href={site.product} aria-current={active === 'product' ? 'page' : undefined}>02 / Menu</a>
-        <a href={site.contact} aria-current={active === 'contact' ? 'page' : undefined}>03 / Contact</a>
+        <a href={site.home} aria-current={active === 'home' ? 'page' : undefined}>Beranda</a>
+        <a href={site.product} aria-current={active === 'product' ? 'page' : undefined}>Daftar Menu</a>
+        <a href={site.contact} aria-current={active === 'contact' ? 'page' : undefined}>Kontak &amp; Reservasi</a>
       </nav>
-      <a class="d-order" href={site.contact}>BOOK TABLE ↗</a>
+      <a class="d-order" href={site.contact}>Pesan Meja</a>
     </header>
+
     <main><slot /></main>
+
     <footer class="d-footer">
-      <div class="d-footer-word">NAGA<br />STEAM</div>
-      <div class="d-footer-line">
-        <span>Steam to order · Serve immediately</span>
-        <nav aria-label="Navigasi footer dimsum"><a href={site.home}>Home</a><a href={site.product}>Menu</a><a href={site.contact}>Contact</a><a href="/">Portal</a></nav>
-        <span>Disusun oleh: ANDIKA RAIHANSYAH (251010502968) &amp; Muhammad Rifki Rhamadani (251010503858) · © 2026</span>
+      <div class="d-wrap d-footer-top">
+        <div class="d-footer-col">
+          <h3>Naga Steam Dimsum House</h3>
+          <p>Restoran dimsum kukus dan goreng autentik, disajikan hangat langsung dari kukusan bambu tradisional. 100% Halal dan higienis.</p>
+        </div>
+        <div class="d-footer-col">
+          <h3>Navigasi Cepat</h3>
+          <div class="d-footer-nav">
+            <a href={site.home}>Beranda</a>
+            <a href={site.product}>Daftar Menu</a>
+            <a href={site.contact}>Kontak &amp; Lokasi</a>
+            <a href="/">Portal Tugas</a>
+          </div>
+        </div>
+        <div class="d-footer-col">
+          <h3>Jam Buka Outlet</h3>
+          <p>Senin – Jumat: 10.00 – 22.00 WIB<br />Sabtu – Minggu: 09.00 – 23.00 WIB</p>
+          <p style="margin-top: 0.5rem; color: #FEEBC8;">Tangerang Selatan, Banten</p>
+        </div>
+      </div>
+      <div class="d-wrap d-footer-bottom">
+        <p><strong>Tugas Mata Kuliah Pemrograman Web</strong> — Disusun oleh: ANDIKA RAIHANSYAH (251010502968) &amp; Muhammad Rifki Rhamadani (251010503858)</p>
+        <p style="margin-top: 0.35rem; font-size: 0.8rem; opacity: 0.8;">© 2026 Naga Steam Dimsum House. All Rights Reserved.</p>
       </div>
     </footer>
   </body>

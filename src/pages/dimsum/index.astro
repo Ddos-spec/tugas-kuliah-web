@@ -3,66 +3,115 @@ import DimsumLayout from '../../layouts/DimsumLayout.astro';
 import { dimsumProducts } from '../../data/brands.js';
 const featured = dimsumProducts.slice(0, 3);
 ---
-<DimsumLayout active="home" title="Beranda" description="Naga Steam Dimsum House — Cantonese-inspired dimsum, bamboo steamers, dan sajian panas yang dibuat fresh.">
+<DimsumLayout active="home" title="Beranda" description="Naga Steam Dimsum House — Restoran dimsum kukus autentik hangat dan lezat di Tangerang Selatan.">
+  <!-- Hero Section -->
   <section class="d-hero">
-    <div class="d-hero-grid">
+    <div class="d-wrap d-hero-grid">
       <div class="d-hero-copy">
-        <p class="d-label">Folded by hand / steamed to order</p>
-        <h1 class="d-display">HOT<br />STEAM.<br />SOFT<br />FOLDS.</h1>
-        <p class="d-copy">Naga Steam menyajikan dimsum bergaya Kanton dengan fokus pada tekstur: kulit tipis, filling juicy, broth panas, dan kukusan bambu yang baru dibuka saat sampai ke meja.</p>
-        <div class="d-hero-actions"><a class="d-button d-button--dark" href="/dimsum/produk/">OPEN MENU</a><a class="d-button" href="/dimsum/kontak/">BOOK A TABLE</a></div>
+        <span class="d-label">100% Halal &amp; Fresh Steamed</span>
+        <h1 class="d-display">Kelezatan Dimsum Autentik Hangat dari Kukusan.</h1>
+        <p class="d-copy">Naga Steam menyajikan aneka pilihan dimsum kukus dan goreng bergaya Kanton. Dibuat dari bahan udang dan ayam pilihan, dengan kuah sup xiao long bao yang meleleh lezat di mulut.</p>
+        <div class="d-hero-actions">
+          <a class="d-button d-button--dark" href="/dimsum/produk/">Lihat Daftar Menu</a>
+          <a class="d-button d-button--ghost" href="/dimsum/kontak/">Reservasi Tempat</a>
+        </div>
       </div>
       <div class="d-hero-media">
         <img src="https://unsplash.com/photos/j9fy7p_hcpM/download?force=true&w=1600" alt="Xiao long bao hangat di dalam kukusan bambu" />
-        <div class="d-hero-sticker">Steam<br />to order<br />every basket</div>
       </div>
     </div>
   </section>
 
-  <section class="d-strip" aria-label="Naga Steam highlights">
-    <div><strong>01 / Fresh Fold</strong><span>Small batches every service</span></div>
-    <div><strong>02 / Hot Basket</strong><span>Steam only after order</span></div>
-    <div><strong>03 / Thin Skin</strong><span>Texture before garnish</span></div>
-    <div><strong>04 / Tea Ready</strong><span>Jasmine & HK milk tea</span></div>
-  </section>
+  <!-- 4 Keunggulan Strip -->
+  <div class="d-wrap">
+    <section class="d-strip" aria-label="Keunggulan Naga Steam">
+      <div class="d-strip-item">
+        <strong>🥟 Dibuat Segar</strong>
+        <span>Kualitas terjaga setiap hari</span>
+      </div>
+      <div class="d-strip-item">
+        <strong>🔥 Kukus Dadakan</strong>
+        <span>Disajikan panas saat dipesan</span>
+      </div>
+      <div class="d-strip-item">
+        <strong>🦐 Udang Pilihan</strong>
+        <span>Isian juicy tanpa pengawet</span>
+      </div>
+      <div class="d-strip-item">
+        <strong>🍵 Teh Melati Wangi</strong>
+        <span>Pilihan Jasmine &amp; HK Milk Tea</span>
+      </div>
+    </section>
+  </div>
 
+  <!-- Tentang Restoran -->
   <section class="d-section">
-    <div class="d-wrap d-section-head">
-      <div><p class="d-label">Straight from the steamer</p><h2 class="d-title">Fresh folds,<br />not display food.</h2></div>
-      <p class="d-copy">Kualitas dimsum turun cepat setelah keluar dari kukusan. Karena itu alurnya sederhana: batch kecil, steam to order, lalu langsung ke meja.</p>
-    </div>
-    <div class="d-wrap d-photo-wall">
-      <figure><img src="https://unsplash.com/photos/idUSfFfqLmw/download?force=true&w=1600" alt="Steamed dumplings di dalam bamboo steamer" /></figure>
-      <figure><img src="https://unsplash.com/photos/IhR3WOLuM7M/download?force=true&w=1200" alt="Beragam dimsum dan side dish" /></figure>
-    </div>
-  </section>
-
-  <section class="d-section d-section--dark">
-    <div class="d-wrap d-section-head">
-      <div><p class="d-label">The Naga standard</p><h2 class="d-title">Texture first.<br />Then flavour.</h2></div>
-      <p class="d-copy" style="color:rgba(255,255,255,.68)">Dimsum yang bagus bukan cuma soal isian. Kulit, kelembapan, suhu, dan timing steam harus bertemu di satu titik.</p>
-    </div>
-    <div class="d-wrap d-system">
-      <article><span>01</span><h3>Fold small.</h3><p>Wrapper tidak dibiarkan mengering sebelum masuk steamer.</p></article>
-      <article><span>02</span><h3>Steam exact.</h3><p>Setiap basket punya timing sendiri supaya kulit tidak overcooked.</p></article>
-      <article><span>03</span><h3>Serve now.</h3><p>Basket dibuka di meja agar aroma dan teksturnya masih tepat.</p></article>
+    <div class="d-wrap">
+      <div class="d-section-head">
+        <h2 class="d-title">Cita Rasa Kanton Tradisional</h2>
+        <p class="d-copy">Kami menjaga standar kebersihan dan teknik pengukusan bambu tradisional agar kelembutan kulit dan kesegaran daging tetap optimal saat dinikmati bersama keluarga.</p>
+      </div>
+      <div class="d-photo-wall">
+        <figure><img src="https://unsplash.com/photos/idUSfFfqLmw/download?force=true&w=1600" alt="Steamed dumplings di dalam bamboo steamer" /></figure>
+        <figure><img src="https://unsplash.com/photos/IhR3WOLuM7M/download?force=true&w=1200" alt="Beragam dimsum dan side dish" /></figure>
+      </div>
     </div>
   </section>
 
-  <section class="d-section">
-    <div class="d-wrap d-section-head">
-      <div><p class="d-label">House favourites</p><h2 class="d-title">Order these first.</h2></div>
-      <p class="d-copy">Tiga item ini memberi gambaran karakter Naga Steam: broth, prawn texture, dan umami.</p>
-    </div>
-    <div class="d-wrap d-favourites">
-      {featured.map((item) => (
-        <article class="d-favourite">
-          <div class="d-favourite-top"><span>{item.category}</span><span>{item.price}</span></div>
-          <h3>{item.name}</h3>
-          <p>{item.note}</p>
+  <!-- Mengapa Memilih Kami -->
+  <section class="d-section d-section--light-red">
+    <div class="d-wrap">
+      <div class="d-section-head">
+        <h2 class="d-title">Standar Dapur Naga Steam</h2>
+        <p class="d-copy">Tiga komitmen utama kami untuk menyajikan makanan terbaik kepada setiap pelanggan.</p>
+      </div>
+      <div class="d-system">
+        <article>
+          <span>1</span>
+          <h3>Bahan Segar</h3>
+          <p>Adonan kulit dan isian daging udang disiapkan berkala sehingga tidak kering.</p>
         </article>
-      ))}
+        <article>
+          <span>2</span>
+          <h3>Waktu Kukus Pas</h3>
+          <p>Kukusan bambu diatur suhunya secara teliti agar tidak lembek dan tetap juicy.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Langsung Disajikan</h3>
+          <p>Tutup kukusan baru dibuka di meja Anda agar aroma dan kehangatannya maksimal.</p>
+        </article>
+      </div>
     </div>
-    <div class="d-wrap" style="margin-top:1.5rem"><a class="d-button" href="/dimsum/produk/">SEE FULL MENU →</a></div>
+  </section>
+
+  <!-- Menu Favorit -->
+  <section class="d-section">
+    <div class="d-wrap">
+      <div class="d-section-head">
+        <h2 class="d-title">Menu Favorit Pilihan</h2>
+        <p class="d-copy">Rekomendasi hidangan paling laris yang wajib dicoba saat pertama kali mampir ke outlet kami.</p>
+      </div>
+      <div class="d-favourites">
+        {featured.map((item) => (
+          <article class="d-favourite">
+            <div>
+              <div class="d-card-top">
+                <span class="d-badge">{item.category}</span>
+                <span class="d-price">{item.price}</span>
+              </div>
+              <h3>{item.name}</h3>
+              <p>{item.note}</p>
+            </div>
+            <div style="margin-top: 1rem; text-align: right;">
+              <a href="/dimsum/produk/" style="color: #C53030; font-weight: 700; font-size: 0.88rem;">Detail Menu →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a class="d-button d-button--dark" href="/dimsum/produk/">Lihat Semua Menu Makanan →</a>
+      </div>
+    </div>
   </section>
 </DimsumLayout>

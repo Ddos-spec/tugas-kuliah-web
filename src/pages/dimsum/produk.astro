@@ -1,6 +1,6 @@
 ---
 import DimsumLayout from '../../layouts/DimsumLayout.astro';
-import { dimsumProducts } from '../../data/brands.js';
+import { brands, dimsumProducts } from '../../data/brands.js';
 const categories = ['Semua Kategori', ...new Set(dimsumProducts.map((item) => item.category))];
 ---
 <DimsumLayout active="product" title="Daftar Menu" description="Daftar lengkap menu hidangan Naga Steam Dimsum: Dimsum Kukus, Goreng, Hidangan Penutup, dan Minuman Teh.">
@@ -48,7 +48,7 @@ const categories = ['Semua Kategori', ...new Set(dimsumProducts.map((item) => it
         <p style="color: #4A5568; max-width: 650px; margin: 0 auto 1.5rem;">
           Untuk 2 orang, kami sarankan memesan 3 basket kukus (Xiao Long Bao + Hakau + Siomay), 1 porsi goreng, dan 2 cangkir teh melati hangat agar porsi pas dan tetap hangat saat disantap.
         </p>
-        <a class="d-button d-button--dark" href="/dimsum/kontak/">Pesan Tempat Sekarang</a>
+        <a class="d-button d-button--dark" href={brands.dimsum.contact}>Pesan Tempat Sekarang</a>
       </div>
     </div>
   </section>

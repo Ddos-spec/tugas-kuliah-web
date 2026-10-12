@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <!doctype html>
 <html lang="id">
@@ -7,7 +8,7 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Portal dua website tugas kuliah: Amber & Bean Coffee Roasters dan Naga Steam Dimsum House." />
-    <link rel="icon" type="image/svg+xml" href="/logo-cafe.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}/logo-cafe.svg`} />
     <title>Amber & Bean × Naga Steam — Web Project</title>
   </head>
   <body class="portal">
@@ -16,7 +17,7 @@ import '../styles/global.css';
       <span>Astro 5 · Responsive · Multi-page</span>
     </header>
     <main class="portal-grid">
-      <a class="portal-card" href="/cafe/" aria-label="Masuk ke Amber & Bean Coffee Roasters">
+      <a class="portal-card" href={`${base}/cafe/`} aria-label="Masuk ke Amber & Bean Coffee Roasters">
         <img src="https://unsplash.com/photos/PaKa6QrFytA/download?force=true&w=1600" alt="Interior coffee bar dengan pastry dan perlengkapan kopi" />
         <div class="portal-card__copy">
           <small>01 · Coffee House · Oleh Andika Raihansyah</small>
@@ -28,7 +29,7 @@ import '../styles/global.css';
           <span class="portal-card__arrow">Enter coffee house →</span>
         </div>
       </a>
-      <a class="portal-card" href="/dimsum/" aria-label="Masuk ke Naga Steam Dimsum House">
+      <a class="portal-card" href={`${base}/dimsum/`} aria-label="Masuk ke Naga Steam Dimsum House">
         <img src="https://unsplash.com/photos/idUSfFfqLmw/download?force=true&w=1600" alt="Xiao long bao di dalam kukusan bambu" />
         <div class="portal-card__copy">
           <small>02 · Dimsum House · Oleh M. Rifki Rhamadani</small>

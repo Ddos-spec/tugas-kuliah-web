@@ -49,7 +49,7 @@ const pageTitle = title ? `${title} — ${site.fullName}` : site.fullName;
             <a href={site.home}>Beranda</a>
             <a href={site.product}>Daftar Menu</a>
             <a href={site.contact}>Kontak &amp; Lokasi</a>
-            <a href="/">Portal Tugas</a>
+            <a href={import.meta.env.BASE_URL}>Portal Tugas</a>
           </div>
         </div>
         <div class="d-footer-col">

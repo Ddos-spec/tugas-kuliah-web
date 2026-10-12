@@ -1,6 +1,6 @@
 ---
 import CafeLayout from '../../layouts/CafeLayout.astro';
-import { cafeProducts } from '../../data/brands.js';
+import { brands, cafeProducts } from '../../data/brands.js';
 const featured = cafeProducts.slice(0, 3);
 ---
 <CafeLayout active="home" title="Beranda" description="Amber & Bean Coffee Roasters — specialty coffee, pastry, dan tempat singgah yang tenang.">
@@ -11,8 +11,8 @@ const featured = cafeProducts.slice(0, 3);
         <h1 class="c-display">Coffee for<br />unhurried days.</h1>
         <p class="c-lede">Amber &amp; Bean meracik specialty coffee dengan karakter caramel, cocoa, dan citrus yang bersih—disandingkan dengan pastry hangat dan ruang yang nyaman untuk ngobrol, membaca, atau menyelesaikan deadline.</p>
         <div class="c-hero-actions">
-          <a class="c-button c-button--dark" href="/cafe/produk/">Lihat menu</a>
-          <a class="c-button c-button--light" href="/cafe/kontak/">Jam buka &amp; kontak</a>
+          <a class="c-button c-button--dark" href={brands.cafe.product}>Lihat menu</a>
+          <a class="c-button c-button--light" href={brands.cafe.contact}>Jam buka &amp; kontak</a>
         </div>
       </div>
       <div class="c-hero-visual">
@@ -58,6 +58,6 @@ const featured = cafeProducts.slice(0, 3);
         </article>
       ))}
     </div>
-    <div class="c-wrap" style="margin-top:1.5rem"><a class="c-button c-button--light" href="/cafe/produk/">Buka seluruh menu →</a></div>
+    <div class="c-wrap" style="margin-top:1.5rem"><a class="c-button c-button--light" href={brands.cafe.product}>Buka seluruh menu →</a></div>
   </section>
 </CafeLayout>

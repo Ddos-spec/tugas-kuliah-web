@@ -44,7 +44,7 @@ const pageTitle = title ? `${title} — ${site.fullName}` : site.fullName;
           <a href={site.home}>Beranda</a>
           <a href={site.product}>Menu</a>
           <a href={site.contact}>Kontak</a>
-          <a href="/">Portal</a>
+          <a href={import.meta.env.BASE_URL}>Portal</a>
         </nav>
       <div class="c-wrap c-footer-bottom">
         <span>© 2026 Amber &amp; Bean · Slow roast · quiet room · warm pastry</span>

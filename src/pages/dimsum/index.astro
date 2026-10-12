@@ -1,6 +1,6 @@
 ---
 import DimsumLayout from '../../layouts/DimsumLayout.astro';
-import { dimsumProducts } from '../../data/brands.js';
+import { brands, dimsumProducts } from '../../data/brands.js';
 const featured = dimsumProducts.slice(0, 3);
 ---
 <DimsumLayout active="home" title="Beranda" description="Naga Steam Dimsum House — Restoran dimsum kukus autentik hangat dan lezat di Tangerang Selatan.">
@@ -12,8 +12,8 @@ const featured = dimsumProducts.slice(0, 3);
         <h1 class="d-display">Kelezatan Dimsum Autentik Hangat dari Kukusan.</h1>
         <p class="d-copy">Naga Steam menyajikan aneka pilihan dimsum kukus dan goreng bergaya Kanton. Dibuat dari bahan udang dan ayam pilihan, dengan kuah sup xiao long bao yang meleleh lezat di mulut.</p>
         <div class="d-hero-actions">
-          <a class="d-button d-button--dark" href="/dimsum/produk/">Lihat Daftar Menu</a>
-          <a class="d-button d-button--ghost" href="/dimsum/kontak/">Reservasi Tempat</a>
+          <a class="d-button d-button--dark" href={brands.dimsum.product}>Lihat Daftar Menu</a>
+          <a class="d-button d-button--ghost" href={brands.dimsum.contact}>Reservasi Tempat</a>
         </div>
       </div>
       <div class="d-hero-media">
@@ -104,13 +104,13 @@ const featured = dimsumProducts.slice(0, 3);
               <p>{item.note}</p>
             </div>
             <div style="margin-top: 1rem; text-align: right;">
-              <a href="/dimsum/produk/" style="color: #C53030; font-weight: 700; font-size: 0.88rem;">Detail Menu →</a>
+              <a href={brands.dimsum.product} style="color: #C53030; font-weight: 700; font-size: 0.88rem;">Detail Menu →</a>
             </div>
           </article>
         ))}
       </div>
       <div style="text-align: center; margin-top: 2.5rem;">
-        <a class="d-button d-button--dark" href="/dimsum/produk/">Lihat Semua Menu Makanan →</a>
+        <a class="d-button d-button--dark" href={brands.dimsum.product}>Lihat Semua Menu Makanan →</a>
       </div>
     </div>
   </section>

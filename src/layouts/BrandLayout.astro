@@ -22,12 +22,6 @@ const pageTitle = title ? `${title} — ${site.fullName}` : site.fullName;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <div class="topbar">
-      <div class="shell topbar__inner">
-        <span>Tugas kuliah · multi-site Astro</span>
-        <span><a href="/">Portal</a> &nbsp;·&nbsp; <a href={site.switchHref}>Switch to {site.switchLabel}</a></span>
-      </div>
-    </div>
     <header class="site-header">
       <div class="shell site-header__inner">
         <a class="brandmark" href={site.home}>
